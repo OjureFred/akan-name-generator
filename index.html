@@ -2,44 +2,88 @@
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+  <!--<![endif]-->
   <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <title></title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="css/bootstrap.css">
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="css/bootstrap.css" />
   </head>
   <body>
     <div class="jumbotron jumbotron-fliud">
       <h1 class="display-4 text-center">Ghana Akan Tribe Name Generator</h1>
-      <p class="lead text-center">Ghana Akan Tribe names are derived from the day of the week and ones gender.</p>
-      <hr class="my-4">
-      <p>This Javascript application requests for input of birthday and gender and generates the name for the user.</p>
+      <p class="lead text-center">
+        Ghana Akan Tribe names are derived from the day of the week and ones
+        gender.
+      </p>
+      <hr class="my-4" />
+      <p>
+        This Javascript application requests for input of birthday and gender
+        and generates the name for the user.
+      </p>
       <a class="btn btn-primary btn-lg" href="#" role="button">Have some fun</a>
     </div>
     <br />
-<br />
+    <br />
 
     <div class="input-group input-group-lg">
       <div class="input-group-prepend">
-        <span class="input-group-text" id="inputGroup-sizing-lg">Please enter your date of birth</span>
+        <span class="input-group-text" id="inputGroup-sizing-lg"
+          >Please enter your date of birth</span
+        >
       </div>
-      <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg">
+      <input
+        type="text"
+        id="age-input"
+        class="form-control"
+        aria-label="Sizing example input"
+        aria-describedby="inputGroup-sizing-lg"
+      />
     </div>
     <br />
     <br />
     <div class="input-group input-group-lg">
       <div class="input-group-prepend">
-        <span class="input-group-text" id="inputGroup-sizing-lg">Male or Female</span>
+        <span class="input-group-text" id="inputGroup-sizing-lg"
+          >Male or Female</span
+        >
       </div>
-      <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg">
+      <input
+        type="text"
+        id="gender-input"
+        class="form-control"
+        aria-label="Sizing example input"
+        aria-describedby="inputGroup-sizing-lg"
+      />
     </div>
     <br />
     <br />
-    <button type="button" class="btn btn-primary btn-lg btn-block">Generate the name</button>
+    <button
+     id="submit"
+      class="btn btn-primary btn-lg btn-block"
+      onclick="getValues()"
+    >
+      Generate the name
+    </button>
     <br />
-    <script src="" async defer></script>
+    <p id="display-date"></p>
+    <p id="display-gender"></p>
+   <!---<script src="js/generateAge.js" async defer></script>-->
+   <script>
+     function getValues(){
+       var date = document.getElementById('age-input').value;
+       var gender = document.getElementById('gender-input').value;
+
+       //display values in <p> elements
+       var dateDisplay = document.getElementById('display-date');
+       var genderDisplay = document.getElementById('display-gender');
+       dateDisplay.innerHTML = date;
+       genderDisplay.innerHTML = gender;
+     }
+   </script>
   </body>
 </html>
