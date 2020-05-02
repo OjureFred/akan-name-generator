@@ -11,7 +11,7 @@ Javascript project that uses bootstrap to style visual elements of webpage
 To start using this project use the following commands:
 
 - `git clone https://github.com/OjureFred/akan-name-generator.git`
-- `cd hello-world`
+- `cd akan-name-generator`
 - `atom .`
 - `code .` [//]: # (this is if Visual Studio Code is your preferred text editor)
 
