@@ -15,6 +15,7 @@
   </head>
   <body>
     <div class="jumbotron jumbotron-fliud">
+      <img src="images/Akan-people.jpg" height="250" width="250" />
       <h1 class="display-4 text-center">Ghana Akan Tribe Name Generator</h1>
       <p class="lead text-center">
         Ghana Akan Tribe names are derived from the day of the week and ones
@@ -39,10 +40,12 @@
       <input
         type="text"
         id="age-input"
+        placeholder="Please use the format DD/MM/YY"
         class="form-control"
         aria-label="Sizing example input"
         aria-describedby="inputGroup-sizing-lg"
       />
+      <small id="dateError"></small>
     </div>
     <br />
     <br />
@@ -56,14 +59,16 @@
         type="text"
         id="gender-input"
         class="form-control"
+        placeholder="Male or Female"
         aria-label="Sizing example input"
         aria-describedby="inputGroup-sizing-lg"
       />
+      <small id="genderError"></small>
     </div>
     <br />
     <br />
     <button
-     id="submit"
+      id="submit"
       class="btn btn-primary btn-lg btn-block"
       onclick="getValues()"
     >
@@ -72,18 +77,33 @@
     <br />
     <p id="display-date"></p>
     <p id="display-gender"></p>
-   <!---<script src="js/generateAge.js" async defer></script>-->
-   <script>
-     function getValues(){
-       var date = document.getElementById('age-input').value;
-       var gender = document.getElementById('gender-input').value;
+    <!---<script src="js/generateAge.js" async defer></script>-->
+    <script>
+      function getValues() {
+        //get values from the web page
+        var date = document.getElementById("age-input").value;
+        var gender = document.getElementById("gender-input").value;
 
-       //display values in <p> elements
-       var dateDisplay = document.getElementById('display-date');
-       var genderDisplay = document.getElementById('display-gender');
-       dateDisplay.innerHTML = date;
-       genderDisplay.innerHTML = gender;
-     }
-   </script>
+        //split the date vale
+        var dateArr = date.split("/");
+        
+        //validate date
+        var dateErrorResponse = document.getElementById("dateError");
+        var dateErrMsg = "Invalid Date";
+        
+        If(dateArr[0] < 0){
+          alert("invalid date")
+        }
+        
+
+        //validate gender
+
+        //display values in <p> elements
+        var dateDisplay = document.getElementById("display-date");
+        var genderDisplay = document.getElementById("display-gender");
+        dateDisplay.innerHTML = dateArr[0] + dateArr[1] + dateArr[2];
+        genderDisplay.innerHTML = gender;
+      }
+    </script>
   </body>
 </html>
