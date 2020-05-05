@@ -108,16 +108,21 @@
         var dyy = yy % 100;
         var cc = Math.trunc(yy / 100);
 
+        //calculate day of week - Day of the week (d) = ( ( (CC/4) -2*CC-1) + ((5*YY/4) ) + ((26*(MM+1)/10)) + DD ) mod 7
+        var dow = (((cc/4)-2*cc-1) + ((5*dyy/4)) + ((26*(mm + 1)/10)) + dd) % 7;
+
         //validate gender
         var lcGender = gender.toLowerCase();
         if (lcGender != "male" || lcGender != "female") {
           alert("invalid gender");
         }
 
+        //Generate name
+
         //display values in <p> elements
         var dateDisplay = document.getElementById("display-date");
         var genderDisplay = document.getElementById("display-gender");
-        dateDisplay.innerHTML = dd + " " + mm + " " + yy + " " + dyy + " " + cc;
+        dateDisplay.innerHTML = dd + " " + mm + " " + yy + " " + dyy + " " + cc + ' ' + dow;
         genderDisplay.innerHTML = gender;
       }
     </script>
