@@ -40,7 +40,7 @@
       <input
         type="text"
         id="age-input"
-        placeholder="Please use the format DD/MM/YY"
+        placeholder="Please use the format DD/MM/YYYY"
         class="form-control"
         aria-label="Sizing example input"
         aria-describedby="inputGroup-sizing-lg"
@@ -86,22 +86,38 @@
 
         //split the date vale
         var dateArr = date.split("/");
-        
-        //validate date
+        var dd = dateArr[0];
+        var mm = dateArr[1];
+        var yy = dateArr[2];
+
+        //validate Day
         var dateErrorResponse = document.getElementById("dateError");
         var dateErrMsg = "Invalid Date";
-        
-        If(dateArr[0] < 0){
-          alert("invalid date")
+
+        if (dd < 0 || dd > 31) {
+          alert("invalid date");
         }
-        
+        if (mm < 0 || mm > 12) {
+          alert("invalid date");
+        }
+        if (yy > 2020) {
+          alert("future date");
+        }
+
+        //extract century and year
+        var dyy = yy % 100;
+        var cc = Math.trunc(yy / 100);
 
         //validate gender
+        var lcGender = gender.toLowerCase();
+        if (lcGender != "male" || lcGender != "female") {
+          alert("invalid gender");
+        }
 
         //display values in <p> elements
         var dateDisplay = document.getElementById("display-date");
         var genderDisplay = document.getElementById("display-gender");
-        dateDisplay.innerHTML = dateArr[0] + dateArr[1] + dateArr[2];
+        dateDisplay.innerHTML = dd + " " + mm + " " + yy + " " + dyy + " " + cc;
         genderDisplay.innerHTML = gender;
       }
     </script>
