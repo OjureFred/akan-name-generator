@@ -15,15 +15,15 @@ function getValues() {
 
   if (dd < 0 || dd > 31) {
     alert("invalid date");
-    break;
+    
   }
   if (mm < 0 || mm > 12) {
     alert("invalid date");
-    break;
+    
   }
   if (yy > 2020) {
     alert("future date");
-    break;
+    
   }
 
   //extract century and year
@@ -39,7 +39,7 @@ function getValues() {
   var lcGender = gender.toLowerCase();
   if (lcGender != "male" && lcGender != "female") {
     alert("invalid gender");
-    break;
+    
   }
 
   //Generate name
