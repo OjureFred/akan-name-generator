@@ -15,12 +15,15 @@ function getValues() {
 
   if (dd < 0 || dd > 31) {
     alert("invalid date");
+    break;
   }
   if (mm < 0 || mm > 12) {
     alert("invalid date");
+    break;
   }
   if (yy > 2020) {
     alert("future date");
+    break;
   }
 
   //extract century and year
@@ -29,13 +32,14 @@ function getValues() {
 
   //calculate day of week - Day of the week (d) = ( ( (CC/4) -2*CC-1) + ((5*YY/4) ) + ((26*(MM+1)/10)) + DD ) mod 7
   var dow = Math.floor(
-    (cc / 4 - 2 * cc - 1 + (5 * dyy) / 4 + (26 * (mm + 1)) / 10 + dd) % 7
+    (cc/4 - 2 * cc - 1 + (5 * dyy) / 4 + (26 * (mm + 1)) / 10 + dd) % 7
   );
 
   //validate gender
   var lcGender = gender.toLowerCase();
   if (lcGender != "male" && lcGender != "female") {
     alert("invalid gender");
+    break;
   }
 
   //Generate name
